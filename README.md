@@ -6,6 +6,8 @@ This app scans Top UK news sites and returns latest headline news items. There a
 * [streamlit](https://pypi.org/project/streamlit/)
 * [Flask](https://pypi.org/project/Flask/)
 
+
+
 ## Screenshots
 ### 1. CLI
 
@@ -20,6 +22,28 @@ This app scans Top UK news sites and returns latest headline news items. There a
 ![Flask Output](./imgs/fl-output.png)
 
 
+### How To Use the CLI
 
+To clone and run this application, you'll need [Git](https://git-scm.com) installed on your computer. From your command line
+
+```bash
+# Clone this repository
+$ git clone https://github.com/ubongab/news-scrape
+
+# Go into the repository
+$ cd news-scrape
+
+# Install dependencies
+$ pip install typer
+$ pip install feedparser
+$ pip install arrow
+$ pip install pandas 
+
+# Run the app
+$ python cli-app.py technology
+
+# By default, 10 news items are displayed, to change the number of items:
+$ python cli-app.py technology 15
+```
 
 
