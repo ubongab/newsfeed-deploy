@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>NewsFeedUk</title>
+</head>
+<section class="hero is-info">
+    <div class="hero-body">
+        <p class="title">
+            NewsFeed UK
+        </p>
+        <p class="subtitle">
+            be updated
+        </p>
+    </div>
+</section>
+
+<body>
+
+    <div class="tabs is-centered">
+        <ul>
+            <li class="is-active">
+                <a href="{{ url_for('page',category='uk') }}/">
+                    <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                    <span>UK</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('page',category='world') }}/">
+                    <span class="icon is-small"><i class="fas fa-music" aria-hidden="true"></i></span>
+                    <span>World</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('page',category='health') }}/">
+                    <span class=" icon is-small"><i class="fas fa-film" aria-hidden="true"></i></span>
+                    <span>Health</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('page',category='education') }}/">
+                    <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
+                    <span>Education</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('page',category='business') }}/">
+                    <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
+                    <span>Business</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('page',category='politics') }}/">
+                    <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
+                    <span>Politics</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('page',category='technology') }}/">
+                    <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
+                    <span>Technology</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('page',category='entertainment') }}/">
+                    <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
+                    <span>Entertainment</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('page',category='sport') }}/">
+                    <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
+                    <span>Sport</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="row">
+        <div id="right-pane">
+
+            <div class="media-content">
+                <p class="title is-4">Top Stories</p>
+            </div>
+            {% for t in top %}
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="{{ t.img_url }}" alt="{{ t.img_url }}">
+                    </figure>
+                </div>
+                <div class="card-header">
+                    <p class="title is-4"> <a href="{{t.link }}"> {{ t.title }}</a></p>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        {{t.summary}}
+
+                        <br> <strong><em> {{t.hrs_ago}} </em> </strong>&nbsp; &nbsp;
+                        <span class="tag is-info ">{{t.src}}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+
+
+
+        <span class="tag is-danger is-black is-medium">{{category}} news feed</span>
+        <div id="my-content">
+
+            &nbsp;
+
+            {% block content %} {% endblock %}
+
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            © Copyright: {{year}}
+            <a class="text-white" href="http://www.github.com/ubongab"> ubongab</a>
+        </p>
+    </div>
+</footer>
+
+</html>

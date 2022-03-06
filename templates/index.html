@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container is-fluid $container-offset">
+    {% for item in current_news %}
+
+    <!-- <p> {{item.summary }} </p> -->
+    <div id="my-padding">
+        <div class="card">
+            <div class="card-content">
+                <div class="container">
+                    <h1><strong><a href="{{item.link}}" , target="_blank"> {{item.title }}, </a></strong></h1>
+
+                    <p> {{item.summary }} </p>
+                    <p> <strong> <em>{{item.date_str}} </em></strong>
+                        <span> <em> &nbsp; &nbsp;&nbsp;
+
+                                <span class="tag is-danger is-normal is-light">{{item.src}}</span>
+                            </em>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- <hr> -->
+
+    {% endfor %}
+
+    {% endblock content %}
+</div>

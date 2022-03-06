@@ -19,7 +19,7 @@ This app scans Top UK news sites and returns latest headline news items. There a
 
 
 ### 2. FLASK (still in development)
-![Flask Output](./imgs/fl-output.png)
+![Flask Output](./imgs/fl-output2.png)
 
 
 ### How To Use the CLI
@@ -46,4 +46,6 @@ $ python cli-app.py technology
 $ python cli-app.py technology 15
 ```
 
-
+### TO DO
+* Remove dependency - pandas
+* Function doc strings

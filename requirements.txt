@@ -1,0 +1,6 @@
+typer
+streamlit
+flask
+feedparser
+pandas
+arrow
