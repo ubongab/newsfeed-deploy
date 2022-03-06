@@ -3,4 +3,5 @@ streamlit
 flask
 feedparser
 pandas
+bs4
 arrow
