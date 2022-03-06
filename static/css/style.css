@@ -1,0 +1,27 @@
+#my-content {
+    float: left ;
+    /* overflow: hidden; */
+    width: 65% ;
+    border-radius: 0.5%;
+    border-left: 12%;
+    background: rgb(45, 54, 80);
+
+    /* background: rgb(112, 122, 143); */
+    /* background: rgb(95, 144, 250); */
+  }
+  #right-pane {
+    float: left ;
+    width: 35% ;
+    padding: 2%
+  }
+
+
+  #my-padding {
+    padding-bottom: 1% ;
+
+  }
+.row:after{
+    /* clear: both; */
+    overflow: hidden;
+}
+
