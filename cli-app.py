@@ -1,4 +1,5 @@
 import typer
+import arrow
 from enum import Enum
 from newsfeed import NewsFeed
 
@@ -19,14 +20,15 @@ class Category(Enum):
 
 
 @app.command()
-def news(cat: Category):
+def news(cat: Category, total: int = typer.Argument(10)):
     '''Display news items'''
     print(f'{cat.value} News')
-    for item in n.search(cat.value)[:10]:
+    for item in n.search(cat.value)[:total]:
         print('--------------------------------------------------------------------------------------------------')
         print(item['title'])
         print(item['link'])
-        print(f"Date: {item['date_str']} \tsource: {item['src']}")
+        print(
+            f"{arrow.get(item['datetime']).humanize()} \tsource: {item['src']}")
     print('--------------------------------------------------------------------------------------------------\n')
 
 
