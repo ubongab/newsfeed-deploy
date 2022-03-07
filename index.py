@@ -29,7 +29,7 @@ def page_manager(category):
 
 @app.route("/")
 @app.route("/<category>/")
-def page(category):
+def page(category='uk'):
     current_news = page_manager(category)
     return render_template('index.html', current_news=current_news,
                            year=datetime.now().year, category=category, top=top)
