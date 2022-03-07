@@ -11,7 +11,7 @@ class TopStories:
 
     def _get_page(self, url):
         r = requests.get(url)
-        soup = BeautifulSoup(r.text, 'lxml')
+        soup = BeautifulSoup(r.text, 'html.parser')
         return soup
 
     def _metro(self):
