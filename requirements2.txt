@@ -1,7 +1,6 @@
-typer
-streamlit
 flask
 feedparser
 pandas
 bs4
+requests
 arrow
