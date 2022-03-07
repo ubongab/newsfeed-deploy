@@ -1,6 +1,0 @@
-flask
-feedparser
-pandas
-bs4
-requests
-arrow
