@@ -41,10 +41,15 @@ class TopStories:
             'div', class_="gel-layout__item gel-1/1").find('p').getText()
         date_str = bbc.find(
             'div', class_="gel-layout__item gel-1/1").find('time').get('datetime')
-        hrs_ago = bbc.find(
-            'div', class_="gel-layout__item gel-1/1").find('time').find('span', class_='gs-u-vh').getText()
-        return [{'title': title, 'summary': summary, 'link': url, 'img_url': img_url,
+        try:
+            hrs_ago = bbc.find(
+                'div', class_="gel-layout__item gel-1/1").find('time').find('span', class_='gs-u-vh').getText()
+            return [{'title': title, 'summary': summary, 'link': url, 'img_url': img_url,
                  'date_str': date_str, 'hrs_ago': hrs_ago, 'src': 'bbc'}]
+        except:
+            
+            return [{'title': title, 'summary': summary, 'link': url, 'img_url': img_url,
+                     'date_str': date_str, 'src': 'bbc'}]
 
 
 # top = TopStories()
