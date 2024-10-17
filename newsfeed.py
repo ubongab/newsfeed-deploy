@@ -67,7 +67,7 @@ class NewsFeed:
         '''
         self.news = []
         for src, url in self.urls.items():
-            if src in ['bbc', 'daily_express', 'channel4', 'sky']:
+            if src in [ 'daily_express', 'channel4', 'sky']: //'bbc' removed
                 print(f'...scanning {src} news')
                 bbc_news = self._get_feed(url.format(
                     category), src=src, category=category)
